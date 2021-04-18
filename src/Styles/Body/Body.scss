@@ -1,0 +1,8 @@
+.body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 0.4fr 0.9fr 4fr;
+  gap: 1rem;
+  background-color: var(--bg-secondary);
+  padding: 1rem;
+}

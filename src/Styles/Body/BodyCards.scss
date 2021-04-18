@@ -1,0 +1,22 @@
+.body-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  color: var(--text-primary);
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  align-items: center;
+  border: var(--border);
+  border-radius: 9px;
+  padding: 0.3rem 1.2rem;
+
+  div {
+    text-align: right;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}

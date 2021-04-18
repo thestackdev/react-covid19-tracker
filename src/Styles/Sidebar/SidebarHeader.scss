@@ -1,0 +1,17 @@
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-primary);
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+
+  input {
+    border: var(--border);
+    padding: 0.7rem;
+    border-radius: 9px;
+    outline: none;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+}

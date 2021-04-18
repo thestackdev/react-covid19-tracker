@@ -1,0 +1,8 @@
+.sidebar {
+  display: grid;
+  padding: 0rem 1rem;
+  height: 100vh;
+  grid-template-rows: 1fr 9fr;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}

@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import "arrow-long-up.css";
+@import "base";
+
+:root {
+  --bg-primary: #222529;
+  --bg-secondary: #282b2e;
+
+  --text-primary: #fff;
+  --text-secondary: #ccc;
+
+  --border: 1px solid rgb(87, 87, 87);
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+@import "App";
+@import "Body/Body";
+@import "Body/BodyHeader";
+@import "Body/BodyCards";
+@import "Body/BodyFooter";
+@import "Sidebar/Sidebar";
+@import "Sidebar/SidebarHeader";
+@import "Sidebar/SidebarBody";
