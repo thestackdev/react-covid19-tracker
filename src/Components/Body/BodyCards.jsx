@@ -8,7 +8,7 @@ const Card = ({ title, total, newCases, className }) => (
       {newCases && (
         <div className="bottom">
           <h4>{CommaNumber(newCases)}</h4>
-          <i class="arrow gg-arrow-long-up" />
+          <i className="arrow gg-arrow-long-up" />
         </div>
       )}
     </div>
@@ -16,7 +16,7 @@ const Card = ({ title, total, newCases, className }) => (
 );
 
 export const BodyCards = () => {
-  const global = useSelector((state) => state.global);
+  const global = useSelector((state) => state.Reducer.global);
 
   return (
     <div className="body-cards">

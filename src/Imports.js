@@ -14,18 +14,20 @@ export { SidebarHeader } from "Components/Sidebar/SidebarHeader";
 export { SidebarBody } from "Components/Sidebar/SidebarBody";
 
 // Redux
-export { createStore } from "redux";
 export { useSelector, useDispatch, Provider } from "react-redux";
+export {
+  configureStore,
+  createSlice,
+  createAsyncThunk,
+} from "@reduxjs/toolkit";
+
 export {
   default as Reducer,
   updateSearchKey,
   updateSelectedCoords,
-  updateGlobal,
-  updateCountries,
+  fetchGlobal,
+  fetchCountries,
 } from "Redux/covid19";
-
-// API
-export { fetchGlobal, fetchCountries } from "Redux/API";
 
 // Utils
 export { showDataOnMap } from "Components/Utils";

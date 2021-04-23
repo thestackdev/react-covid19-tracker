@@ -1,4 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, Axios } from "Imports";
+const GLOBAL_URL = "https://disease.sh/v3/covid-19/all";
+const COUNTRIES_URL = "https://disease.sh/v3/covid-19/countries";
+
+export const fetchGlobal = createAsyncThunk("covid19/fetchGlobal", async () => {
+  const { data } = await Axios.get(GLOBAL_URL);
+  return data;
+});
+
+export const fetchCountries = createAsyncThunk(
+  "covid19/fetchCountries",
+  async () => {
+    const { data } = await Axios.get(COUNTRIES_URL);
+    return data;
+  }
+);
 
 const initialState = {
   searchKey: "",
@@ -18,19 +33,28 @@ const slice = createSlice({
       const { lat, long } = payload.payload;
       state.selectedCoords = { lat, long };
     },
-    updateGlobal: (state, payload) => {
-      state.global = payload.payload.data;
+  },
+  extraReducers: {
+    [fetchGlobal.pending]: (state, payload) => {
+      // console.log(payload);
     },
-    updateCountries: (state, payload) => {
-      state.countries = payload.payload.data;
+    [fetchGlobal.fulfilled]: (state, { payload }) => {
+      state.global = payload;
+    },
+    [fetchGlobal.rejected]: (state, payload) => {
+      // console.log(payload);
+    },
+    [fetchCountries.pending]: (state, payload) => {
+      // console.log(payload);
+    },
+    [fetchCountries.fulfilled]: (state, { payload }) => {
+      state.countries = payload;
+    },
+    [fetchCountries.rejected]: (state, payload) => {
+      // console.log(payload);
     },
   },
 });
 
-export const {
-  updateSearchKey,
-  updateSelectedCoords,
-  updateGlobal,
-  updateCountries,
-} = slice.actions;
+export const { updateSearchKey, updateSelectedCoords } = slice.actions;
 export default slice.reducer;

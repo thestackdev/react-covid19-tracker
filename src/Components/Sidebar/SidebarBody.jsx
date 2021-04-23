@@ -5,10 +5,10 @@ const match = (stra, strb) => {
 };
 
 export const SidebarBody = () => {
-  const { searchKey, countries } = useSelector((state) => state);
+  const { searchKey, countries } = useSelector((state) => state.Reducer);
   return (
     <div className="sidebar-body">
-      {countries.map((country, index) => {
+      {countries?.map((country, index) => {
         return !searchKey.length ? (
           <Tile
             key={index}
@@ -60,21 +60,21 @@ const Tile = ({
       <h4 className="confirmed">{CommaNumber(TotalConfirmed)}</h4>
       <div className="bottom">
         <h5>{CommaNumber(NewConfirmed)}</h5>
-        <i class="arrow gg-arrow-long-up" />
+        <i className="arrow gg-arrow-long-up" />
       </div>
     </div>
     <div>
       <h4 className="recovered">{CommaNumber(TotalRecovered)}</h4>
       <div className="bottom">
         <h5>{CommaNumber(NewRecovered)}</h5>
-        <i class="arrow gg-arrow-long-up" />
+        <i className="arrow gg-arrow-long-up" />
       </div>
     </div>
     <div>
       <h4 className="deaths">{CommaNumber(TotalDeaths)}</h4>
       <div className="bottom">
         <h5>{CommaNumber(NewDeaths)}</h5>
-        <i class="arrow gg-arrow-long-up" />
+        <i className="arrow gg-arrow-long-up" />
       </div>
     </div>
     <div>

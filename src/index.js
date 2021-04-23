@@ -1,6 +1,5 @@
-import { ReactDOM, App, Provider, createStore, Reducer } from "Imports";
-
-const store = createStore(Reducer);
+import { ReactDOM, App, Provider } from "Imports";
+import store from "Redux/index";
 
 ReactDOM.render(
   <Provider store={store}>

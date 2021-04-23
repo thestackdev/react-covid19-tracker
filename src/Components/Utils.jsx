@@ -25,7 +25,7 @@ export const prettyPrintStat = (stat) =>
   stat ? `+${CommaNumber(stat)}` : "+0";
 
 export const showDataOnMap = (data, casesType = "cases") =>
-  data.map((country, index) => (
+  data?.map((country, index) => (
     <Circle
       key={index}
       center={[country.countryInfo.lat, country.countryInfo.long]}

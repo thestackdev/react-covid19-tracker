@@ -3,8 +3,6 @@ import {
   Body,
   useEffect,
   useDispatch,
-  updateGlobal,
-  updateCountries,
   fetchGlobal,
   fetchCountries,
 } from "Imports";
@@ -12,12 +10,9 @@ import {
 export const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    const func = async () => {
-      dispatch(updateGlobal(await fetchGlobal()));
-      dispatch(updateCountries(await fetchCountries()));
-    };
-    func();
-  }, []);
+    dispatch(fetchGlobal());
+    dispatch(fetchCountries());
+  }, [dispatch]);
   return (
     <div className="app">
       <Body />
